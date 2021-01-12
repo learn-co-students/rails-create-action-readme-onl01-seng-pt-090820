@@ -108,3 +108,22 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/posts" for ::1 at 2021-01-11 21:04:03 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"//5rRWYNX/G7Tb51whFnGqdU1tc0y5eUiG7NxniOpJTfbm6We8VAomBzSu2/qq4Fm5YdluVMLCwMrwxzNxr+9g==", "title"=>"Snuffalufagus3", "description"=>"Snuff's description3", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Snuffalufagus3"], ["description", "Snuff's description3"], ["created_at", "2021-01-12 02:04:03.548487"], ["updated_at", "2021-01-12 02:04:03.548487"]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 42ms (ActiveRecord: 31.4ms)
+
+
+Started GET "/posts/5" for ::1 at 2021-01-11 21:04:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
