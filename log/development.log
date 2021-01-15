@@ -40,3 +40,42 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2021-01-15 22:38:22.563879"], ["updated_at", "2021-01-15 22:38:22.563879"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for 127.0.0.1 at 2021-01-15 17:47:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 549ms (Views: 516.4ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2021-01-15 17:47:15 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nlvx5uk+/SLvA+touzHei8Yo0VMySzsIvo8p55l3WfJtJ/jz+F4dD/L4EdEyFRwGNM81ppzMHof6HE11RCslWQ==", "title"=>"iuyoui", "description"=>"iuyouyi", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "iuyoui"], ["description", "iuyouyi"], ["created_at", "2021-01-15 22:47:15.080427"], ["updated_at", "2021-01-15 22:47:15.080427"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2021-01-15 17:47:57 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 41ms (Views: 26.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2021-01-15 17:48:05 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y86ZG1WRPrQQ/4dCfb3uHQpcl+B7SoV32ZNBAOS/nDk4spAORPHemQ0Effv0mSyQ+LtzFdXNoPidACWSOePgkg==", "title"=>"fgf", "description"=>"fdgdfg", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "fgf"], ["description", "fdgdfg"], ["created_at", "2021-01-15 22:48:05.564534"], ["updated_at", "2021-01-15 22:48:05.564534"]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 15.5ms)
+
+
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
